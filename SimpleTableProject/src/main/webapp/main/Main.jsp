@@ -16,7 +16,7 @@
   body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
-    color: #f5f6f7;
+    color: black;
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
@@ -65,18 +65,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Me</a>
+      <a class="navbar-brand" href="../main/Main.do">Me</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">WHO</a></li>
-        <li><a href="#">WHAT</a></li>
-        <li><a href="#">WHERE</a></li>
+        <li><a href="../main/Table.do">Table</a></li>
+        <li><a href="../main/Image.do">image</a></li>
       </ul>
     </div>
   </div>
 </nav>
-	<jsp:include page="Home.jsp"></jsp:include>
+	<jsp:include page="${main_jsp }"></jsp:include>
 
 </body>
 </html>
