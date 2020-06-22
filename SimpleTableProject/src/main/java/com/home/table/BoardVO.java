@@ -21,6 +21,10 @@ HIT              NUMBER
 
 	 */
 	private int no;
+	private String name;
+	private String subject;
+	private String content;
+	private int hit;
 	private Date regdate;
 	private String title;
 }

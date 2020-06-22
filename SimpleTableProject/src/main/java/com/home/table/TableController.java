@@ -1,11 +1,15 @@
 package com.home.table;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class TableController {
+	
+	@Autowired
+	private BoardDAO dao;
 
 	@RequestMapping("main/Main.do")
 	public String main(Model m) {

@@ -12,8 +12,7 @@ public class BoardDAO {
 	@Autowired
 	private BoardMapper mapper;
 	
-	public List<BoardVO> BoardList() {
-		
+	public List<BoardVO> BoardList() {	
 		return mapper.BoardList();
 	}
 }

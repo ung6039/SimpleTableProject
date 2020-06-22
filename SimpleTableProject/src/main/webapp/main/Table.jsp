@@ -13,11 +13,12 @@
 		<th class="text-center">제목</th>
 		<th class="text-center">날짜</th>
 	</tr>
-	<c:forEach var ="vo" items="${list }">
+	<!--<c:forEach var ="vo" items="${list }"> -->
 	<tr>
 		<td class="text-center">1</td>
 		<td class="text-center" colspan="3">그림같은 집</td>
 		<td class="text-center">11.22</td>
 	</tr>
-	</c:forEach>
+	<!--</c:forEach>-->
+	
 </table>
