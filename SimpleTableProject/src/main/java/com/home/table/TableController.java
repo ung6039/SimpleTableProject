@@ -1,5 +1,7 @@
 package com.home.table;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ public class TableController {
 	}
 	@RequestMapping("main/Table.do")
 	public String table(Model m) {
+		List<BoardVO> list = dao.BoardList();
+		m.addAttribute("list",list);
 		m.addAttribute("main_jsp", "Table.jsp");
 		
 		return "main/Main";

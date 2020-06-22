@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 
 public interface BoardMapper {
 	
-	@Select("SELECT * FROM BOARD")
+	@Select("SELECT * FROM BOARD order by no")
 	public List<BoardVO> BoardList();
 }
