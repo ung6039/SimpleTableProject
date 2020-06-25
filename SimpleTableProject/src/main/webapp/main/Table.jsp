@@ -19,17 +19,25 @@
 		<td class="text-center">${vo.no}</td>
 		<td class="text-center" colspan="3">${vo.subject}</td>
 		<td class="text-center">${vo.name}</td>
-		<td class="text-center">${vo.regdate}</td>
+		<td class="text-center">
+		<fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/>
+		</td>
 		<td class="text-center">
 			<button>댓글</button>
 		</td>
 	</tr>
 	</c:forEach>
-	<tr>
+	<tr class="text-center">
 		<td>
-			<button class="primary-success">Pre</button>
-					Page / TotalPage
-			<button class="primary-danger">Next</button>
+		<ul class="text-center">
+			<li class="primary">
+				<a>PRE</a>
+			</li>
+				${start} / ${total}
+			<li class="primary">
+				<a>NEXT</a>
+			</li>
+		</ul>
 		</td>
 	</tr>
 	
