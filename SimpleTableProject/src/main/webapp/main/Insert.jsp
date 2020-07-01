@@ -2,16 +2,19 @@
     pageEncoding="UTF-8"%>
 <table class="table">
 	<tr>
+		<td><h1>Insert</h1></td>
 		<th>제목</th>
-		<td colspan="4"></td>
+		<td>
+			<input type="text" value="" name="subject"/>
+		</td>
 	</tr>
 	<tr>
 		<th>내용</th>
-		<td colspan="4" height="300px"><textarea></textarea></td>
+		<td height="300px"><textarea name="content"></textarea></td>
 	</tr>
 	<tr>
 		<th>비밀번호</th>
-		<td></td>
+		<td><input type="text" value=" " name="password"/></td>
 	</tr>
 
 </table>
