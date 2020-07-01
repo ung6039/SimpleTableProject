@@ -53,4 +53,10 @@ public class TableController {
 		
 		return "main/Main";
 	}
+	@RequestMapping("main/Insert.do")
+	public String Insert(Model m) {
+		
+		m.addAttribute("main_jsp","Insert.jsp");
+		return "main/Insert";
+	}
 }

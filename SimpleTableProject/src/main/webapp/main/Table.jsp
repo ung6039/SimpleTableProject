@@ -30,14 +30,20 @@
 	<tr class="text-center">
 		<td>
 		<ul class="text-center">
-			<li class="primary">
-				<a>PRE</a>
+			<li class="btn btn-primary">
+				<a style="color:white;">PRE</a>
 			</li>
-				${start} / ${total}
-			<li class="primary">
-				<a>NEXT</a>
+			${start} / ${total}
+			<li class="btn btn-danger">
+				<a style="color:white;">NEXT</a>
 			</li>
 		</ul>
+		</td>
+	</tr>
+	<tr>
+		<td class="text-right">
+			<a href="../main/Insert.do"class="btn btn-danger">글쓰기</a>
+			<a href="../main/Main.do"class="btn btn-danger">Home</a>
 		</td>
 	</tr>
 	
