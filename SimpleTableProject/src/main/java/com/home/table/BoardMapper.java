@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Insert;
 
 public interface BoardMapper {
-	
 	
 	
 	@Select("SELECT no,name,subject,content,hit,regdate,num "
@@ -19,4 +18,9 @@ public interface BoardMapper {
 	
 	@Select("SELECT COUNT(*) FROM BOARD")
 	public int Totalpage();
+	
+	@Insert("Insert into board values( "
+		+"(select NVL(max(no)+1,1) from board),"
+		+ "ung,#{subject},#{content},0)")
+	public void Insert(Map map);
 }

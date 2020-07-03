@@ -18,7 +18,7 @@
 	<tr>
 		<td class="text-center">${vo.no}</td>
 		<td class="text-center" colspan="3">${vo.subject}</td>
-		<td class="text-center">${vo.name}</td>
+		<td class="text-center">${vo.content}</td>
 		<td class="text-center">
 		<fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/>
 		</td>
@@ -28,7 +28,7 @@
 	</tr>
 	</c:forEach>
 	<tr class="text-center">
-		<td>
+		<td class="text-center">
 		<ul class="text-center">
 			<li class="btn btn-primary">
 				<a style="color:white;">PRE</a>

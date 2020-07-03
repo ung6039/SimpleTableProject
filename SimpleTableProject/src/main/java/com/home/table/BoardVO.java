@@ -26,5 +26,5 @@ HIT              NUMBER
 	private String content;
 	private int hit;
 	private Date regdate;
-	private String title;
+	
 }

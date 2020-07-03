@@ -19,4 +19,7 @@ public class BoardDAO {
 	public int Totalpage() {
 		return mapper.Totalpage();
 	}
+	public void Insert_ok(Map map) {
+		mapper.Insert(map);
+	}
 }
