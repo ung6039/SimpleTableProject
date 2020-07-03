@@ -43,14 +43,6 @@ public class TableController {
 		
 		int total = dao.Totalpage();
 		
-		System.out.println("---------------");
-		System.out.println("start :"+start);
-		System.out.println("end :"+end);
-		System.out.println(list.size());
-		System.out.println(total);
-		System.out.println("---------------");
-		
-		
 		m.addAttribute("end",end);
 		m.addAttribute("start",start);
 		m.addAttribute("total",total);

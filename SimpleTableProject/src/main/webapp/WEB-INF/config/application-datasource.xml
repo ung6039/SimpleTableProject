@@ -8,7 +8,7 @@
 	
 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
 		p:driverClassName="oracle.jdbc.driver.OracleDriver"
-		p:url="jdbc:oracle:thin:@localhost:1521:orcl3"
+		p:url="jdbc:oracle:thin:@localhost:1521:orcl"
 		p:username="hr"
 		p:password="happy"
 	/>
@@ -19,5 +19,8 @@
 		p:sqlSessionFactory-ref="ssf"
 		p:mapperInterface="com.home.table.BoardMapper"
 	/>
-
+	<bean id="MemberMapper" class="org.mybatis.spring.mapper.MapperFactoryBean"
+		p:sqlSessionFactory-ref="ssf"
+		p:mapperInterface="com.home.member.MemberMapper"
+	/>
 </beans>

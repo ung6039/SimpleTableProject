@@ -71,6 +71,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../main/Table.do">Table</a></li>
         <li><a href="../main/Image.do">image</a></li>
+        <li><a href="../member/Member.do">회원가입</a></li>
       </ul>
     </div>
   </div>
