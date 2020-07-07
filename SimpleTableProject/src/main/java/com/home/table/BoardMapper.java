@@ -21,6 +21,6 @@ public interface BoardMapper {
 	
 	@Insert("Insert into board values( "
 		+"(select NVL(max(no)+1,1) from board),"
-		+ "ung,#{subject},#{content},0)")
+		+"#{subject},#{content},#{name},#{password},0,sysdate)")
 	public void Insert(Map map);
 }

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <h1 class="text-center">Insert</h1>
+<form action="../main/Insert_ok.do">
 <table class="table">
+	
 	<tr>	
 		<th>제목</th>
 		<td>
@@ -18,9 +20,11 @@
 	</tr>
 	<tr>
 		<td>
-			<a href="../main/Insert_ok.do" class="btn btn-primary">확인</a>
+			<input type="submit" value="글쓰기">
+		
 			<a href="../main/Table.do" class="btn btn-danger">목록</a>
 		</td>
 	</tr>
-
+	
 </table>
+</form>

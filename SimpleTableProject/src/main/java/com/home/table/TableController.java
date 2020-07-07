@@ -75,11 +75,17 @@ public class TableController {
 		String subject = req.getParameter("subject");
 		String content = req.getParameter("content");
 		String password = req.getParameter("password");
-		
+		String name = "ung";
+		System.out.println("출력 내용 확인 : ");
+		System.out.println(subject);
+		System.out.println(password);
+		System.out.println(content);
 		Map map = new HashMap();
 		map.put("subject", subject);
 		map.put("content",content);
-//		map.put("password", password);
+		map.put("password", password);
+		map.put("name", name);
+		
 		dao.Insert_ok(map);
 		
 		m.addAttribute("main_jsp","Table.jsp");
