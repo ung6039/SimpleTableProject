@@ -1,5 +1,7 @@
 package com.home.table;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class TableController {
@@ -40,6 +43,7 @@ public class TableController {
 		map.put("end", end);
 		
 		List<BoardVO> list = dao.BoardList(map);
+		
 		
 		int total = dao.Totalpage();
 		
@@ -88,7 +92,6 @@ public class TableController {
 		
 		dao.Insert_ok(map);
 		
-		m.addAttribute("main_jsp","Table.jsp");
-		return "main/Main";
+		return "redirect:/main/Table.do";
 	}
 }

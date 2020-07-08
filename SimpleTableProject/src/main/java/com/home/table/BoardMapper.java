@@ -12,7 +12,7 @@ public interface BoardMapper {
 	@Select("SELECT no,name,subject,content,hit,regdate,num "
 			+ "FROM (SELECT no,name,subject,content,hit,regdate,rownum as num "
 			+ "FROM (SELECT no,name,subject,content,hit,regdate "
-			+ "FROM board ORDER BY no)) "
+			+ "FROM board ORDER BY no DESC)) "
 			+ "WHERE num BETWEEN #{start} AND #{end}")
 	public List<BoardVO> BoardList(Map map);
 	

@@ -8,17 +8,17 @@
 </div>
 <table class="table">
 
-	<tr class="text-center">
-		<th class="text-center">번호</th>
-		<th class="text-center" colspan="3">제목</th>
-		<th class="text-center">글쓴이</th>
-		<th class="text-center">날짜</th>
+	<tr class="text-center" style="width:100px;">
+		<th class="text-center" width="20%">번호</th>
+		<th class="text-center" width="20%">제목</th>
+		<th class="text-center" width="20%">글쓴이</th>
+		<th class="text-center" width="30%">날짜</th>
 	</tr>
 	<c:forEach var ="vo" items="${list }">
 	<tr>
 		<td class="text-center">${vo.no}</td>
 		<td class="text-center" colspan="3">${vo.subject}</td>
-		<td class="text-center">${vo.content}</td>
+		<td class="text-center" width="50%;">ungs</td>
 		<td class="text-center">
 		<fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/>
 		</td>
@@ -28,20 +28,18 @@
 	</tr>
 	</c:forEach>
 	<tr class="text-center">
-		<td class="text-center">
-		<ul class="text-center">
-			<li class="btn btn-primary">
-				<a style="color:white;">PRE</a>
-			</li>
+		<td class="text-center" colspan="6">
+		<ul class="text-center" style="text-decoration: none">
+			<li>
+			<a class="btn btn-primary"style="color:white;">PRE</a>
 			${start} / ${total}
-			<li class="btn btn-danger">
-				<a style="color:white;">NEXT</a>
+			<a class="btn btn-danger" style="color:white;">NEXT</a>
 			</li>
 		</ul>
 		</td>
 	</tr>
-	<tr>
-		<td class="text-right">
+	<tr class="text-center" align="center">
+		<td class="text-center" colspan="6">
 			<a href="../main/Insert.do"class="btn btn-danger">글쓰기</a>
 			<a href="../main/Main.do"class="btn btn-danger">Home</a>
 		</td>
