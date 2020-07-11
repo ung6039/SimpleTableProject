@@ -21,10 +21,9 @@ public class TableController {
 	@Autowired
 	private BoardDAO dao;
 
-	@RequestMapping("main/Main.do")
+	@RequestMapping("Main.do")
 	public String main(Model m) {
 		
-		m.addAttribute("main_jsp", "Home.jsp");
 		return "main/Main";
 	}
 	@RequestMapping("main/Table.do")

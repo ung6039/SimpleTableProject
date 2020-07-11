@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,27 +57,10 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="../main/Main.do">Me</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="../main/Table.do">Table</a></li>
-        <li><a href="../main/Image.do">image</a></li>
-        <li><a href="../member/Member.do">회원가입</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-	<jsp:include page="${main_jsp }"></jsp:include>
-
+	<!-- Navbar -->
+	<tiles:insertAttribute name="nav"/>
+	<!-- Content -->
+	<tiles:insertAttribute name="content"/>
+	
 </body>
 </html>
