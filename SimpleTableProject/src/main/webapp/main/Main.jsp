@@ -56,7 +56,6 @@
   </style>
 </head>
 <body>
-
 	<!-- Navbar -->
 	<tiles:insertAttribute name="nav"/>
 	<!-- Content -->
