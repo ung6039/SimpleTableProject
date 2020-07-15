@@ -24,9 +24,9 @@ public class TableController {
 	@RequestMapping("Main.do")
 	public String main(Model m) {
 		
-		return "main/Main";
+		return "main";
 	}
-	@RequestMapping("main/Table.do")
+	@RequestMapping("Table.do")
 	public String table(Model m,String page) {
 		
 		if(page==null) {
@@ -50,30 +50,23 @@ public class TableController {
 		m.addAttribute("start",start);
 		m.addAttribute("total",total);
 		m.addAttribute("list",list);
-		m.addAttribute("main_jsp", "Table.jsp");
 		
-		return "main/Main";
+		return "table/Table";
 	}
-	@RequestMapping("main/Image.do")
+	@RequestMapping("Image.do")
 	public String image(Model m) {
 		m.addAttribute("main_jsp", "Image.jsp");
 		
-		return "main/Main";
+		return "image/Image";
 	}
 	
-	@RequestMapping("main/Insert.do")
+	@RequestMapping("Insert.do")
 	public String Insert(Model m) {
 		
-		m.addAttribute("main_jsp","Insert.jsp");
-		return "main/Main";
-	}
-	@RequestMapping("main/Test.do")
-	public String Test(Model m) {
 		
-		m.addAttribute("main_jsp","Test.jsp");
-		return "main/Main";
+		return "table/Insert";
 	}
-	@RequestMapping("main/Insert_ok.do")
+	@RequestMapping("Insert_ok.do")
 	public String insert_ok(Model m, HttpServletRequest req) {
 		String subject = req.getParameter("subject");
 		String content = req.getParameter("content");
@@ -89,8 +82,7 @@ public class TableController {
 		map.put("password", password);
 		map.put("name", name);
 		
-		dao.Insert_ok(map);
 		
-		return "redirect:/main/Table.do";
+		return "redirect:/Table.do";
 	}
 }

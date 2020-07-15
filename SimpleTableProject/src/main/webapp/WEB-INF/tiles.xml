@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="main" template="/main/Main.jsp">
-		<put-attribute name="nav" value="/main/nav.jsp"/>
-		<put-attribute name="content" value="/main/content.jsp"/>
+	<definition name="main" template="/WEB-INF/main/Main.jsp">
+		<put-attribute name="nav" value="/WEB-INF/main/nav.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/main/content.jsp"/>
 	</definition>
 	
 	<!-- 1) 경로가 2개일때 -->
 	<definition name="*/*" extends="main">
-		<put-attribute name="content" value="/{1}/{2}.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/{1}/{2}.jsp"/>
 	</definition>
 	<!-- 2) 경로가 3개일때  -->
 	<definition name="*/*/*">
-		<put-attribute name="content" value="/{1}/{2}/{3}.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/{1}/{2}/{3}.jsp"/>
 	</definition>
 </tiles-definitions>
