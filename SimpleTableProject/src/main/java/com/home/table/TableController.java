@@ -46,8 +46,7 @@ public class TableController {
 		
 		int total = dao.Totalpage();
 		
-		m.addAttribute("end",end);
-		m.addAttribute("start",start);
+		m.addAttribute("curpage",curpage);
 		m.addAttribute("total",total);
 		m.addAttribute("list",list);
 		
@@ -81,7 +80,7 @@ public class TableController {
 		map.put("content",content);
 		map.put("password", password);
 		map.put("name", name);
-		
+		dao.Insert_ok(map);
 		
 		return "redirect:/Table.do";
 	}

@@ -13,11 +13,10 @@ public class MemberController {
 	@Autowired
 	private MemberDAO dao;
 	
-	@RequestMapping("member/Member.do")
+	@RequestMapping("Member.do")
 	public String member(Model m) {
-		m.addAttribute("main_jsp","../member/member.jsp");
 		
-		return "main/Main";
+		return "member/member";
 	}
 	@RequestMapping("member/Member_ok.do")
 	public void member_ok(Map map) {

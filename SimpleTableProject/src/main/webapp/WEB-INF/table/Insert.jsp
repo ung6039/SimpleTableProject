@@ -22,7 +22,7 @@
 		<td>
 			<input type="submit" value="글쓰기">
 		
-			<a href="../Table.do" class="btn btn-danger">목록</a>
+			<a href="Table.do" class="btn btn-danger">목록</a>
 		</td>
 	</tr>
 	

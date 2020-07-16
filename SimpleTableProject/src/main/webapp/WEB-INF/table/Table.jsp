@@ -31,17 +31,17 @@
 		<td class="text-center" colspan="6">
 		<ul class="text-center" style="text-decoration: none">
 			<li>
-			<a class="btn btn-primary"style="color:white;">PRE</a>
-			${start} / ${total}
-			<a class="btn btn-danger" style="color:white;">NEXT</a>
+			<a href="Table.do?page=${curpage>1?curpage-1:curpage }" class="btn btn-primary" style="color:white;">PRE</a>
+			${curpage} / ${total}
+			<a href="Table.do?page=${curpage<total?curpage+1:curpage }" class="btn btn-danger" style="color:white;">NEXT</a>
 			</li>
 		</ul>
 		</td>
 	</tr>
 	<tr class="text-center" align="center">
 		<td class="text-center" colspan="6">
-			<a href="../Insert.do"class="btn btn-danger">글쓰기</a>
-			<a href="../Main.do"class="btn btn-danger">Home</a>
+			<a href="Insert.do"class="btn btn-danger">글쓰기</a>
+			<a href="Main.do"class="btn btn-danger">Home</a>
 		</td>
 	</tr>
 	
