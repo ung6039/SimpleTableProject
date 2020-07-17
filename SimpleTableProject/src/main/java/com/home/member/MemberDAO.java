@@ -1,5 +1,6 @@
 package com.home.member;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,5 +15,9 @@ public class MemberDAO {
 	
 	public void MemberInsert(Map map) {
 		mapper.memberInsert(map);
+	}
+	
+	public List<MemberVO> Login(Map map){
+		return mapper.Login(map);
 	}
 }

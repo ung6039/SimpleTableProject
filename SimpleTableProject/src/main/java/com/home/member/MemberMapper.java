@@ -1,8 +1,10 @@
 package com.home.member;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
 
 public interface MemberMapper {
 
@@ -15,4 +17,8 @@ public interface MemberMapper {
 		+ "#{regdate},"
 		+ "#{birthday} )")
 	public void memberInsert(Map map);
+	
+	@Select("Select memberid,pwd from member "
+		   +"WHERE memberid=#{id} AND pwd=#{pwd} ")
+	public List<MemberVO> Login(Map map);
 }

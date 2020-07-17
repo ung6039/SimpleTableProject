@@ -54,7 +54,7 @@ public class TableController {
 	}
 	@RequestMapping("Image.do")
 	public String image(Model m) {
-		m.addAttribute("main_jsp", "Image.jsp");
+		
 		
 		return "image/Image";
 	}
