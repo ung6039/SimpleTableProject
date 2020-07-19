@@ -1,10 +1,13 @@
 package com.home.member;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +37,12 @@ public class MemberController {
 	
 	@RequestMapping("Login.do")
 	public String Login(Model m, HttpServletRequest req) {
-		
+		try {
+		String msg = req.getParameter("msg");
+		String id = req.getParameter("id");
+		System.out.println(id);
+		System.out.println(msg);
+		}catch(Exception ex) {}
 		
 		return "member/login";
 	}
@@ -47,8 +55,17 @@ public class MemberController {
 		
 		m.addAttribute("id",id);
 		m.addAttribute("pwd",pwd);
+		Map map = new HashMap();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		List<MemberVO> CheckID = dao.Login(map);
 		
-		return "redirect:/CheckId.do";
+		if(CheckID.size()>0) {
+			return "redirect:/Main.do?id="+id;
+		}else {
+			return "redirect:/Login.do?msg=NO";
+		}
+		
 	}
 	
 	@RequestMapping("CheckId.do")

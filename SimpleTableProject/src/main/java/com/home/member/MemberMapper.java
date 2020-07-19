@@ -19,6 +19,6 @@ public interface MemberMapper {
 	public void memberInsert(Map map);
 	
 	@Select("Select memberid,pwd from member "
-		   +"WHERE memberid=#{id} AND pwd=#{pwd} ")
+		   +"WHERE memberid=#{id} AND pwd=#{pwd}")
 	public List<MemberVO> Login(Map map);
 }

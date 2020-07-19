@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<script type="text/javascript">
+	
+</script>
 <body>
 <div class="container">
 	<div class="row">
@@ -17,12 +21,12 @@
 			</tr>
 			<tr>
 				<td>
-					ID:<input type="text" name="id" value="">
+					ID:<input type="text" name="id" value=" ">
 				</td>
 			</tr>
 			<tr>
 				<td>
-					PWD:&nbsp;<input type="password" name="pwd" value="">
+					PWD:&nbsp;<input type="password" name="pwd" value=" ">
 				</td>
 			</tr>
 			<tr>
