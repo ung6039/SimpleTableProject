@@ -53,12 +53,13 @@ public class MemberController {
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
 		
-		m.addAttribute("id",id);
-		m.addAttribute("pwd",pwd);
+//		m.addAttribute("id",id);
+//		m.addAttribute("pwd",pwd);
 		Map map = new HashMap();
 		map.put("id", id);
 		map.put("pwd", pwd);
 		List<MemberVO> CheckID = dao.Login(map);
+		
 		
 		if(CheckID.size()>0) {
 			return "redirect:/Main.do?id="+id;

@@ -22,7 +22,12 @@ public class TableController {
 	private BoardDAO dao;
 
 	@RequestMapping("Main.do")
-	public String main(Model m) {
+	public String main(Model m,HttpServletRequest req) {
+		String id = req.getParameter("id");
+		String img = req.getParameter("img");
+		m.addAttribute("img");
+		m.addAttribute("id",id);
+		System.out.println(id);
 		
 		return "main";
 	}
