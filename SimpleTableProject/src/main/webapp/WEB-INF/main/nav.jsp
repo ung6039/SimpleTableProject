@@ -21,6 +21,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
       	<li><a href="Login.do">로그인</a></li>
+      	<li><a href="Logout.do">로그아웃</a></li>
         <li><a href="Table.do">Table</a></li>
         <li><a href="Image.do">image</a></li>
         <li><a href="Member.do">회원가입</a></li>

@@ -48,7 +48,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("login_ok.do")
-	public String Login_ok(Model m,HttpServletRequest req) {
+	public String Login_ok(Model m,HttpServletRequest req, HttpSession session) {
 		
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
@@ -59,23 +59,20 @@ public class MemberController {
 		map.put("id", id);
 		map.put("pwd", pwd);
 		List<MemberVO> CheckID = dao.Login(map);
-		
-		
 		if(CheckID.size()>0) {
-			return "redirect:/Main.do?id="+id;
+			session.setAttribute("sid", id);
+			System.out.println(session.getAttribute("sid"));
+			return "redirect:/Main.do";
 		}else {
 			return "redirect:/Login.do?msg=NO";
 		}
 		
 	}
 	
-	@RequestMapping("CheckId.do")
-	public String IdCheck(Model m, HttpSession session) {
-		String id = (String)m.asMap().get("id");
-		System.out.println("!!! :id : "+id);
-		session.setAttribute("id",id);
-		
-		return "";
+	@RequestMapping("Logout.do")
+	public String Logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/Main.do";
 	}
 
 }
