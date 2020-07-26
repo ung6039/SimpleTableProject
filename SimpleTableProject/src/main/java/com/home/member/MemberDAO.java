@@ -17,7 +17,7 @@ public class MemberDAO {
 		mapper.memberInsert(map);
 	}
 	
-	public List<MemberVO> Login(Map map){
+	public MemberVO Login(Map map){
 		return mapper.Login(map);
 	}
 }

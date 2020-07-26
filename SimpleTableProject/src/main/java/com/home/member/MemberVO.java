@@ -16,5 +16,8 @@ public class MemberVO {
 	private Date regdate;
 	private Date birthday;
 	
+	// 로그인 상태 확인
+	private String state;
+	
 	
 }

@@ -20,5 +20,5 @@ public interface MemberMapper {
 	
 	@Select("Select memberid,pwd from member "
 		   +"WHERE memberid=#{id} AND pwd=#{pwd}")
-	public List<MemberVO> Login(Map map);
+	public MemberVO Login(Map map);
 }

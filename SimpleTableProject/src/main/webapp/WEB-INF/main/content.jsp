@@ -4,15 +4,15 @@
 
 <div class="container-fluid bg-1 text-center">
   <c:if test="${sid == null}">
-  <h3 class="margin">Who Am I?</h3>
+  	<h3 class="margin">Who Am I?</h3>
   </c:if>
-  <c:if test="${sid=!null }">
-  <h3> ID : ${sid } </h3>
+  <c:if test="${sid != null }">
+  	<h3> ID : ${sid } </h3>
   </c:if>
   <c:if test ="${sid == null }">
   	<img src="img/11.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
   </c:if>
-  <c:if test="${sid=!null }">
-  <img src ="img/main.png"class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <c:if test="${sid	!= null }">
+  	<img src ="img/main.png"class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
   </c:if>
 </div>

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<c:if test="${msg == NO }">
+<c:if test="${mvo.state == NO }">
 	<script type="text/javascript">
 		alert("비밀번호와 아이디가 틀립니다!");
 	</script>
