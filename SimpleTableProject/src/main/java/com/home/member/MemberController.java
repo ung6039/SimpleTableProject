@@ -1,5 +1,6 @@
 package com.home.member;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,31 @@ public class MemberController {
 	public String member(Model m) {
 		
 		return "member/member";
+	}
+	@RequestMapping("join_ok.do")
+	public String join_ok(Model m,HttpServletRequest req) {
+		String id = req.getParameter("id");
+		String pwd = req.getParameter("pwd");
+		String name =req.getParameter("name");
+		
+		Date date = new Date();
+		System.out.println(id+" : "+pwd+" : "+name);
+		Map map = new HashMap();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		map.put("name", name);
+		map.put("info", "1234");
+		map.put("regdate", date.getDay());
+		map.put("birthday", "1993-11-22");
+		
+		dao.MemberInsert(map);
+		if(id.equals(dao.Login(map).getMemberId())) {
+			return "redirect:/Login.do";
+		}
+		else {
+			return "redirect:/Member.do";
+		}
+		
 	}
 	@RequestMapping("member/Member_ok.do")
 	public void member_ok(Map map) {

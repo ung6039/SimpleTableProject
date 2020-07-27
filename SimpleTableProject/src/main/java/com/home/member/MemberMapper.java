@@ -10,7 +10,7 @@ public interface MemberMapper {
 
 	
 	@Insert("INSERT INTO member VALUES("
-		+ "#{memberId},"
+		+ "#{id},"
 		+ "#{pwd},"
 		+ "#{name},"
 		+ "#{info},"

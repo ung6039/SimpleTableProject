@@ -76,7 +76,7 @@
 	<div class="container">
 		<h1 class="text-center">회원 가입 </h1>
 		<div class="row">
-			<form name="frm" action="../member/join_ok.do" method="post"
+			<form name="frm" action="join_ok.do" method="post"
 			id="frm">
 				<table class="table table-hover">
 					<tr>
@@ -92,7 +92,7 @@
 					<tr>
 						<th width="20%" class="danger text-right">ID</th>
 						<td width="80%">
-							<input type="text" name="memberid" size="15" class="input-sm" readonly id="memberid">
+							<input type="text" name="id" size="15" class="input-sm" id="memberid">
 							<input type="button" value="중복체크" class="btn btn-sm btn-danger" id="idcheckBtn">
 						</td>
 					</tr>
