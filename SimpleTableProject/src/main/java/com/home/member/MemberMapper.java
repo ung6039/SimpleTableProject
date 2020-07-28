@@ -9,16 +9,22 @@ import org.apache.ibatis.annotations.Select;
 public interface MemberMapper {
 
 	
-	@Insert("INSERT INTO member VALUES("
+	@Insert("INSERT INTO member(memberid,pwd,name,info,regdate,birthday,addr,img) VALUES("
 		+ "#{id},"
 		+ "#{pwd},"
 		+ "#{name},"
 		+ "#{info},"
-		+ "#{regdate},"
-		+ "#{birthday} )")
+		+ "sysdate,"
+		+ "sysdate,"
+		+ "#{addr},"
+		+ "#{img} )")
 	public void memberInsert(Map map);
 	
-	@Select("Select memberid,pwd from member "
+	@Select("Select * from member "
 		   +"WHERE memberid=#{id} AND pwd=#{pwd}")
 	public MemberVO Login(Map map);
+	
+	@Select("Select * from member "
+			+ "WHERE memberid=#{id}")
+	public MemberVO Login_info(Map map);
 }

@@ -8,23 +8,41 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.home.member.*;
 
 @Controller
-public class TableController {
+public class TableController{
 	
 	@Autowired
 	private BoardDAO dao;
+	
+	@Autowired
+	private MemberDAO mdao;
 
 	@RequestMapping("Main.do")
-	public String main(Model m,HttpServletRequest req) {
+	public String main(Model m,HttpServletRequest req,HttpSession session) {
 		String id = req.getParameter("id");
 		String img = req.getParameter("img");
+		String s="";
+		try {
+			s = session.getAttribute("sid").toString();
+			Map map = new HashMap();
+			map.put("id", s);
+			MemberVO mvo = mdao.Login_info(map);
+			m.addAttribute("img",mvo.getImg());
+			System.out.println("이미지 :"+mvo.getImg());
+		}catch(Exception ex) {
+			s= "로그인 실패";
+		}
+		System.out.println("id :"+s);
+		
 		m.addAttribute("img");
 		m.addAttribute("id",id);
 		System.out.println(id);

@@ -31,6 +31,9 @@ public class MemberController {
 		String id = req.getParameter("id");
 		String pwd = req.getParameter("pwd");
 		String name =req.getParameter("name");
+		String img = "img/img.png";
+		String addr = req.getParameter("addr");
+		
 		
 		Date date = new Date();
 		System.out.println(id+" : "+pwd+" : "+name);
@@ -41,6 +44,8 @@ public class MemberController {
 		map.put("info", "1234");
 		map.put("regdate", date.getDay());
 		map.put("birthday", "1993-11-22");
+		map.put("addr", addr);
+		map.put("img",img);
 		
 		dao.MemberInsert(map);
 		if(id.equals(dao.Login(map).getMemberId())) {

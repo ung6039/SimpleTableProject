@@ -112,7 +112,16 @@
 							<input type="text" name="name" size="15" class="input-sm">
 						</td>
 					</tr>
-					
+					<tr>
+						<th width="20%" class="danger text-right">주소</th>
+						<td width="80%">
+							<input type="text" name="addr" size="5" class="input-sm" value=" ">
+						</td>
+					</tr>
+					<tr>
+						<th width="20%" class="danger text-right">이미지</th>
+						<td width="80">이미지 업로드</td>
+					</tr>
 					<tr>
 						<th width="20%" class="danger text-right">우편번호</th>
 						<td width="80%">

@@ -16,8 +16,10 @@ public class MemberDAO {
 	public void MemberInsert(Map map) {
 		mapper.memberInsert(map);
 	}
-	
 	public MemberVO Login(Map map){
 		return mapper.Login(map);
+	}
+	public MemberVO Login_info(Map map) {
+		return mapper.Login_info(map);
 	}
 }

@@ -13,6 +13,6 @@
   	<img src="img/11.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
   </c:if>
   <c:if test="${sid	!= null }">
-  	<img src ="img/main.png"class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  	<img src ="${img }"class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
   </c:if>
 </div>

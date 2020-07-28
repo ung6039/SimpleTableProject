@@ -15,6 +15,7 @@ public class MemberVO {
 	private String info;
 	private Date regdate;
 	private Date birthday;
+	private String img;
 	
 	// 로그인 상태 확인
 	private String state;
