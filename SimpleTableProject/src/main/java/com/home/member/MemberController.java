@@ -69,17 +69,14 @@ public class MemberController {
 	
 	@RequestMapping("Login.do")
 	public String Login(Model m, HttpServletRequest req) {
+		MemberVO vo = new MemberVO();
 		try {
-			String msg = req.getParameter("msg");
-			if(msg == null) {
-				msg ="YES";
-			}
-			m.addAttribute("msg",msg);
 			String id = req.getParameter("id");
-			System.out.println(id);
-			System.out.println("msg : "+msg);
-		}catch(Exception ex) {}
-		
+			m.addAttribute("id",id);
+			vo.setState("YES");
+		}catch(Exception ex) {
+		}
+		m.addAttribute("mvo",vo);
 		return "member/login";
 	}
 	
@@ -95,21 +92,22 @@ public class MemberController {
 		Map map = new HashMap();
 		map.put("id", id);
 		map.put("pwd", pwd);
-		
-		MemberVO mvo = dao.Login(map);
-		System.out.println(mvo.getMemberId());
-		if(id.equals(mvo.getMemberId()) & pwd.equals(mvo.getPwd())) {
-			mvo.setState("YES");
-			m.addAttribute("mvo",mvo);
-			session.setAttribute("sid", id);
-			System.out.println(session.getAttribute("sid"));
+		MemberVO mvo = new MemberVO();
+		try {
+			mvo = dao.Login(map);
+			if(id.equals(mvo.getMemberId()) & pwd.equals(mvo.getPwd())) {
+				mvo.setState("YES");
+				m.addAttribute("mvo",mvo);
+				session.setAttribute("sid", id);
+				System.out.println("id : "+session.getAttribute("sid"));
+			}
 			return "redirect:/Main.do";
-		}else {
-			mvo.setState("NO");
-			m.addAttribute("mvo",mvo);
+		}catch(Exception ex) {
+			MemberVO rvo = new MemberVO();
+			rvo.setState("NO");
+			m.addAttribute("mvo",rvo);
 			return "redirect:/Login.do";
 		}
-		
 	}
 	
 	@RequestMapping("Logout.do")
