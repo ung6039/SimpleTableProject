@@ -107,4 +107,12 @@ public class TableController{
 		
 		return "redirect:/Table.do";
 	}
+	
+	@RequestMapping("detail.do")
+	public String detail_page(HttpServletRequest req,Model m) {
+		String no = req.getParameter("no");
+		BoardVO vo = dao.DetailBoardPage(Integer.parseInt(no));
+		m.addAttribute("vo",vo);
+		return "table/Detail";
+	}
 }

@@ -22,4 +22,7 @@ public class BoardDAO {
 	public void Insert_ok(Map map) {
 		mapper.Insert(map);
 	}
+	public BoardVO DetailBoardPage(int no) {
+		return mapper.DetailBoardPage(no);
+	}
 }

@@ -9,8 +9,8 @@
   </c:if>
   <table>
   		<c:if test ="${sid == null }">
-  			<tr class="text-center">
-  				<td width="80%" style="background-image: url('img/11.jpg')" class="text-center">
+  			<tr>
+  				<td width="1000px" style="background-image: url('img/11.jpg')" class="text-center">
   					<img width="30%"src="img/11.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
   				</td>
   			</tr>
@@ -28,9 +28,11 @@
   				</h1>
   			</td>
   		</tr>
-  			<td>
-  				<img src ="${img }"class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  		<tr class="text-center">
+  			<td width="100%">
+  				<img src ="${img }"class="img-responsive img-circle margin" style="text-center" width="350" height="350">
   			</td>
+  		</tr>
   		</c:if>
   	
   </table>

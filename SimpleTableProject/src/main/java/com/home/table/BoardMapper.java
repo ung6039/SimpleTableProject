@@ -23,4 +23,8 @@ public interface BoardMapper {
 		+"(select NVL(max(no)+1,1) from board),"
 		+"#{subject},#{content},#{name},#{password},0,sysdate)")
 	public void Insert(Map map);
+	
+	@Select("Select * from board "
+		   +"WHERE no = #{no}")
+	public BoardVO DetailBoardPage(int no);
 }

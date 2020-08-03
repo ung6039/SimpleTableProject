@@ -10,14 +10,16 @@
 
 	<tr class="text-center" style="width:100px;">
 		<th class="text-center" width="20%">번호</th>
-		<th class="text-center" width="20%">제목</th>
-		<th class="text-center" width="20%">글쓴이</th>
+		<th class="text-center" colspan="2">제목</th>
+		<th class="text-center" width="50%">글쓴이</th>
 		<th class="text-center" width="30%">날짜</th>
 	</tr>
 	<c:forEach var ="vo" items="${list }">
 	<tr>
 		<td class="text-center">${vo.no}</td>
-		<td class="text-center" colspan="3">${vo.subject}</td>
+		<td class="text-center" colspan="2" width="60%">
+			<a href="detail.do?no=${vo.no}" style="">${vo.subject}</a>
+		</td>
 		<td class="text-center" width="50%;">ungs</td>
 		<td class="text-center">
 		<fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/>
