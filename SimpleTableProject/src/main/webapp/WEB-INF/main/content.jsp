@@ -9,9 +9,9 @@
   </c:if>
   <table>
   		<c:if test ="${sid == null }">
-  			<tr>
-  				<td width="1000px" style="background-image: url('img/11.jpg')" class="text-center">
-  					<img width="30%"src="img/11.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  			<tr style="width:1000px;">
+  				<td class="text-center">
+  					<img src="img/11.jpg" class="img-responsive img-circle margin" style="display:inline; " alt="Bird" width="100%" height="350">
   				</td>
   			</tr>
   		</c:if>

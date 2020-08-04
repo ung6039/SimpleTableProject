@@ -11,23 +11,36 @@
 <body>
 	<table>
 	<tr class="text-center" style="width:100px;">
-		<th class="text-center" width="10%">번호</th>
-		<th class="text-center" width="20%">제목</th>
-		<th class="text-center" width="10%">글쓴이<th>
-		<th class="text-center" width="40%">내용</th>
-		<th class="text-center" width="10%">날짜</th>
+		
+		
+		
+		
+		
 	</tr>
 	<tr>
+		<th class="text-center" width="10%">번호</th>
 		<td class="text-center">${vo.no }</td>
+	<tr>
+		<th class="text-center" width="20%">제목</th>
 		<td class="text-center">${vo.subject}</td>
+	</tr>
+	<tr>
+		<th class="text-center" width="10%">글쓴이<th>
 		<td class="text-center">${vo.name }</td>
-		<td width="100%">
-			${vo.content }
-		</td>
-		<td class="text-right">
+	</tr>
+	<tr>
+		<th class="text-center" width="10%">날짜</th>
+		<td class="text-center">
 			<fmt:formatDate pattern="MM-dd" value="${vo.regdate }"></fmt:formatDate>
 		</td>
 	</tr>
+	<tr>
+		<th class="text-center" width="40%">내용</th>
+		<td width="100%">
+			${vo.content }
+		</td>
+	</tr>
+	
 	</table>
 </body>
 </html>
