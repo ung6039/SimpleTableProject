@@ -13,7 +13,7 @@
 	</script>
 </c:if>
 <body>
-<div class="container">
+<div class="container-fluid text-center">
 	<div class="row">
 		<form action="login_ok.do" method="post">
 		<table class="table table-hover text-center">
@@ -23,12 +23,12 @@
 			</tr>
 			<tr>
 				<td>
-					ID:<input type="text" name="id" value=" ">
+					ID:<input type="text" name="id" value="${id }" >
 				</td>
 			</tr>
 			<tr>
 				<td>
-					PWD:&nbsp;<input type="password" name="pwd" value=" ">
+					PWD:&nbsp;<input type="password" name="pwd" value="${pwd }">
 				</td>
 			</tr>
 			<tr>

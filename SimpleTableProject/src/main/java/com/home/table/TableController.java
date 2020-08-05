@@ -56,7 +56,7 @@ public class TableController{
 			page="1";
 		}
 		int curpage=Integer.parseInt(page);
-		int rowSize=10;
+		int rowSize=5;
 		int start =(rowSize*curpage)-(rowSize-1);
 		int end = rowSize*curpage;
 		

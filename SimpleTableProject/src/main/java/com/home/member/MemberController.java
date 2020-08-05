@@ -72,9 +72,12 @@ public class MemberController {
 		MemberVO vo = new MemberVO();
 		try {
 			String id = req.getParameter("id");
+			String pwd ="";
+			m.addAttribute("pwd",pwd);
 			m.addAttribute("id",id);
 			vo.setState("YES");
 		}catch(Exception ex) {
+			
 		}
 		m.addAttribute("mvo",vo);
 		return "member/login";
@@ -104,9 +107,11 @@ public class MemberController {
 			}
 			return "redirect:/Main.do";
 		}catch(Exception ex) {
-			MemberVO rvo = new MemberVO();
-			rvo.setState("NO");
-			m.addAttribute("mvo",rvo);
+			System.out.println(ex.getMessage());
+			mvo= new MemberVO();
+			mvo.setState("NO");
+			m.addAttribute("mvo",mvo);
+			System.out.println(mvo.getState());
 			return "redirect:/Login.do";
 		}
 	}

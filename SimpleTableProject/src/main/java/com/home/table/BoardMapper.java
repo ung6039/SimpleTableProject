@@ -16,7 +16,7 @@ public interface BoardMapper {
 			+ "WHERE num BETWEEN #{start} AND #{end}")
 	public List<BoardVO> BoardList(Map map);
 	
-	@Select("SELECT ceil(COUNT(*)/10) FROM BOARD")
+	@Select("SELECT ceil(COUNT(*)/5) FROM BOARD")
 	public int Totalpage();
 	
 	@Insert("Insert into board values( "

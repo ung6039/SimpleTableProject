@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<div class="container-fluid">
 <div style="background-color:silver ;">
 	<h1 class="text-center">게시판</h1>
 </div>
@@ -48,3 +49,4 @@
 	</tr>
 	
 </table>
+</div>
