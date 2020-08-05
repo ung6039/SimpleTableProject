@@ -62,6 +62,7 @@
 	<tiles:insertAttribute name="nav"/>
 	<!-- Content -->
 	<tiles:insertAttribute name="content"/>
-	
+	<!-- footer -->
+	<tiles:insertAttribute name="footer"/>
 </body>
 </html>
