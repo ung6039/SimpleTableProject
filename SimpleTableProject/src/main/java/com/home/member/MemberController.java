@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.collections.map.HashedMap;
@@ -68,7 +70,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping("Login.do")
-	public String Login(Model m, HttpServletRequest req) {
+	public String Login(Model m, HttpServletRequest req, HttpServletResponse response) {
+		
 		MemberVO vo = new MemberVO();
 		try {
 			String id = req.getParameter("id");
@@ -76,6 +79,14 @@ public class MemberController {
 			m.addAttribute("pwd",pwd);
 			m.addAttribute("id",id);
 			vo.setState("YES");
+			
+			// 쿠키
+//			Cookie cookie = new Cookie("userId",id);
+//			cookie.setComment("접속자 아이디");
+//			cookie.setPath("/");
+//			cookie.setMaxAge(60*60*1);
+//			response.addCookie(cookie);
+			
 		}catch(Exception ex) {
 			
 		}
