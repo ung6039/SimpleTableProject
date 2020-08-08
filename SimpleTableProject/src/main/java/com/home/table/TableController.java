@@ -15,6 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.home.main.daily;
+import com.home.main.dailyVO;
 import com.home.member.*;
 
 @Controller
@@ -25,13 +28,18 @@ public class TableController{
 	
 	@Autowired
 	private MemberDAO mdao;
+	
+	@Autowired
+	private daily dal;
 
 	@RequestMapping("Main.do")
 	public String main(Model m,HttpServletRequest req,HttpSession session) {
 		String id = req.getParameter("id");
 		String img = req.getParameter("img");
 		String s="";
+		List<dailyVO> list = dal.dal();
 		try {
+			m.addAttribute("day_list",list.get(0));
 			s = session.getAttribute("sid").toString();
 			Map map = new HashMap();
 			map.put("id", s);
