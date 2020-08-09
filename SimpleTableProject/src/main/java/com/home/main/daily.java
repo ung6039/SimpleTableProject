@@ -27,4 +27,17 @@ public class daily {
 		
 		return list;
 	}
+	
+	public static void main(String[] args) {
+		
+		String s = " ";
+		s = null;
+		
+		boolean check = true;
+		if(s.equals(null)) {
+			check = false;
+		};
+		
+		System.out.println(check);
+	}
 }

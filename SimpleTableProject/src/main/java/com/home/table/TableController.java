@@ -34,13 +34,25 @@ public class TableController{
 
 	@RequestMapping("Main.do")
 	public String main(Model m,HttpServletRequest req,HttpSession session) {
+		List<dailyVO> list = dal.dal();
+		
+		String since_date = req.getParameter("date");
+		if( since_date == null) {
+			since_date = String.valueOf( list.get(0).getSINCE_YEAR()+"/" +list.get(0).getSINCE_MONTH());
+		}
 		String id = req.getParameter("id");
 		String img = req.getParameter("img");
+		
+		
+		String year = since_date.split("/")[0].trim();
+		String month = since_date.split("/")[1].trim();
+		since_date = year+" / "+month;
 		String s="";
-		List<dailyVO> list = dal.dal();
-		System.out.println(list.get(0).getSINCE_MONTH());
+		
 		try {
 			m.addAttribute("day_list",list.get(0));
+			m.addAttribute("since_date",since_date);
+			
 			s = session.getAttribute("sid").toString();
 			Map map = new HashMap();
 			map.put("id", s);

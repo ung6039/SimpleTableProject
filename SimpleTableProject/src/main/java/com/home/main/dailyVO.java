@@ -11,7 +11,7 @@ public class dailyVO {
 	final String[] WEEK = {"일요일","월요일","화요일","수요일","목요일","금요일","토요일"};
 	final int SINCE_YEAR = cal.get(Calendar.YEAR);
 	final int SINCE_DATE = cal.get(Calendar.DATE);
-	final int SINCE_MONTH = cal.get(Calendar.MONTH);
+	final int SINCE_MONTH = cal.get(Calendar.MONTH)+1;
 	
 	
 	

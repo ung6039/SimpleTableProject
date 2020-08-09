@@ -10,9 +10,9 @@
   <div class="container">
   	<div class="row" style="width:500px;" class="text-center">
   			<div class="text-center" width="50%">
-  				<button class="btn-sm" style="color: black;">PRE</button>
-  				${day_list.getSINCE_YEAR() } 년  ${day_list.getSINCE_MONTH()} 월
-  				<button class="btn-sm" style="color: black;">NEXT</button>
+  				<button name="year" class="btn-sm" style="color: black;" value="${year }">PRE</button>
+  				${since_date }
+  				<button name ="month"class="btn-sm" style="color: black;">NEXT</button>
   			</div>
   		</div>
   </div>
