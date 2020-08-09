@@ -7,11 +7,24 @@
   <c:if test="${sid == null}">
   	<h3 class="margin" style="background-image: uri(img/11.jpg)">Who Am I?</h3>
   </c:if>
+  <div class="container">
+  	<div class="row" style="width:500px;" class="text-center">
+  			<div class="text-center" width="50%">
+  				<button class="btn-sm" style="color: black;">PRE</button>
+  				${day_list.getSINCE_YEAR() } 년  ${day_list.getSINCE_MONTH()} 월
+  				<button class="btn-sm" style="color: black;">NEXT</button>
+  			</div>
+  		</div>
+  </div>
   <table style="width:60%;height:100%;text-align: center; margin:auto">
-  		<tr style="width:500px;" class="text-center">
-  			<td class="text-center" width="30%">
-  				${day_list.getSINCE_YEAR() } / ${day_list.getSINCE_MONTH()} / ${day_list.getSINCE_DATE()}  
-  			</td>
+  		<tr >
+  			<th style="color: red" class="text-center" width="10%">일</th>
+  			<th class="text-center" width="10%">월</th>
+  			<th class="text-center" width="10%">화</th>
+  			<th class="text-center" width="10%">수</th>
+  			<th class="text-center" width="10%">목</th>
+  			<th class="text-center" width="10%">금</th>
+  			<th class="text-center" width="10%">토</th>
   		</tr>
   		<tr>
 			<c:forEach  var="i" items="${day_list.getDAY() }">

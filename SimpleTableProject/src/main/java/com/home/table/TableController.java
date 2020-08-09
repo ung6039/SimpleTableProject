@@ -38,6 +38,7 @@ public class TableController{
 		String img = req.getParameter("img");
 		String s="";
 		List<dailyVO> list = dal.dal();
+		System.out.println(list.get(0).getSINCE_MONTH());
 		try {
 			m.addAttribute("day_list",list.get(0));
 			s = session.getAttribute("sid").toString();
