@@ -3,6 +3,7 @@ package com.home.table;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,12 +35,13 @@ public class TableController{
 
 	@RequestMapping("Main.do")
 	public String main(Model m,HttpServletRequest req,HttpSession session) {
-		List<dailyVO> list = dal.dal();
 		
+		Calendar c_dal = Calendar.getInstance(); 
 		String since_date = req.getParameter("date");
 		if( since_date == null) {
-			since_date = String.valueOf( list.get(0).getSINCE_YEAR()+"/" +list.get(0).getSINCE_MONTH());
+			since_date = String.valueOf( c_dal.get(Calendar.YEAR)+" / "+( c_dal.get(Calendar.MONTH)+1 ));
 		}
+		List<dailyVO> list = dal.dal(since_date);
 		String id = req.getParameter("id");
 		String img = req.getParameter("img");
 		
