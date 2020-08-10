@@ -12,9 +12,16 @@ public class dailyVO {
 	final int SINCE_YEAR = cal.get(Calendar.YEAR);
 	final int SINCE_DATE = cal.get(Calendar.DATE);
 	final int SINCE_MONTH = cal.get(Calendar.MONTH)+1;
+	int frist_day = 0;
 	
 	
 	
+	public void setFrist_day(int frist_day) {
+		this.frist_day = frist_day;
+	}
+	public int getFrist_day() {
+		return frist_day;
+	}
 	public int getSINCE_DATE() {
 		return SINCE_DATE;
 	}

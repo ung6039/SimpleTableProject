@@ -27,6 +27,12 @@
   			<th class="text-center" width="10%">토</th>
   		</tr>
   		<tr>
+  			<c:if test ="${day_list.getFrist_day() > 0}">
+  				<c:forEach begin="0" end="${day_list.getFrist_day() }">
+  					<td style="background-color: gray">
+  					</td>
+  				</c:forEach>
+  			</c:if>
 			<c:forEach  var="i" items="${day_list.getDAY() }">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
 					<td style="background-color: blue">${i }</td>
