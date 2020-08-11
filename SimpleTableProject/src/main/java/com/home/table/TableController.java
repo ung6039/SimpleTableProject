@@ -48,6 +48,10 @@ public class TableController{
 		
 		String year = since_date.split("/")[0].trim();
 		String month = since_date.split("/")[1].trim();
+		m.addAttribute("month",month);
+		int ss = Integer.parseInt(month);
+		int test_check = list.get(0).getDAYS()[ss] + (list.get(0).getFrist_day()+1);
+		m.addAttribute("test_check",test_check);
 		since_date = year+" / "+month;
 		String s="";
 		

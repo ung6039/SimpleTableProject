@@ -113,7 +113,6 @@ public class MemberController {
 				mvo.setState("YES");
 				m.addAttribute("mvo",mvo);
 				session.setAttribute("sid", id);
-				m.addAttribute("date","2020-10-11");
 				System.out.println("id : "+session.getAttribute("sid"));
 			}
 			return "redirect:/Main.do";
