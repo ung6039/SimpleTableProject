@@ -27,8 +27,8 @@
   			<th class="text-center" width="10%">토</th>
   		</tr>
   		<tr>
-  			<c:if test ="${day_list.getFrist_day() > 0}">
-  				<c:forEach begin="0" end="${day_list.getFrist_day() }">
+  			<c:if test ="${day_list.getFrist_day() >= 0}">
+  				<c:forEach begin="0" end="${day_list.getFrist_day()+1 }">
   					<td style="background-color: gray">
   					</td>
   				</c:forEach>
