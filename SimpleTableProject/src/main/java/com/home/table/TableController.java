@@ -50,6 +50,7 @@ public class TableController{
 		String month = since_date.split("/")[1].trim();
 		m.addAttribute("month",month);
 		int ss = Integer.parseInt(month);
+		System.out.println("ss :"+ss);
 		int test_check = list.get(0).getDAYS()[ss] + (list.get(0).getFrist_day()+1);
 		m.addAttribute("test_check",test_check);
 		since_date = year+" / "+month;

@@ -63,11 +63,13 @@
   			<th class="text-center" width="10%">토</th>
   		</tr>
   		<tr>
-  		<c:forEach  var="i" begin="1" end="${test_check} ">
-  			<c:if test ="${i <= day_list.getFrist_day()+1}">
+  			<c:if test ="${day_list.getFrist_day() >=0 }">
+  				<c:forEach begin="0" end ="${day_list.getFrist_day()+1 }">
   					<td style="background-color: gray">
   					</td>
+  				</c:forEach>
   			</c:if>
+  		<c:forEach  var="i" begin="1" end="31" step="1">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
 					<td class="table-hover" style="background-color: blue;">
 					${i }</td>
