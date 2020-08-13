@@ -42,22 +42,35 @@ public class TableController{
 			since_date = String.valueOf( c_dal.get(Calendar.YEAR)+" / "+( c_dal.get(Calendar.MONTH)+1 ));
 		}
 		List<dailyVO> list = dal.dal(since_date);
+		if(list.get(0).getFrist_day() >6) {
+			System.out.println("??");
+			list.get(0).setFrist_day(1);
+		}
+		System.out.println("첫 째날 잡기 : "+(list.get(0).getFrist_day()));
 		String id = req.getParameter("id");
 		String img = req.getParameter("img");
 		
+		System.out.println("firstDAY :"+list.get(0).getFrist_day());
 		
 		String year = since_date.split("/")[0].trim();
+		System.out.println("year : "+year);
 		String month = since_date.split("/")[1].trim();
+		System.out.println("month : "+month);
 		m.addAttribute("month",month);
-		int ss = Integer.parseInt(month);
+		int ss = Integer.parseInt(month) -1;
 		System.out.println("ss :"+ss);
+		if(ss > 11) {
+			ss = 0;
+		}
 		int test_check = list.get(0).getDAYS()[ss] + (list.get(0).getFrist_day()+1);
 		m.addAttribute("test_check",test_check);
 		since_date = year+" / "+month;
 		String s="";
 		
 		try {
+			System.out.println("첫 째날 잡기2 : "+(list.get(0).getFrist_day()+1));
 			m.addAttribute("day_list",list.get(0));
+			System.out.println("첫 째날 잡기3 : "+(list.get(0).getFrist_day()+1));
 			m.addAttribute("since_date",since_date);
 			
 			s = session.getAttribute("sid").toString();

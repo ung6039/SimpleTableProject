@@ -2,21 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<script type="text/javascript" >
-	String.prototype.trim = function(){
-		
-		this.replace(/^\s+|\s+$/g,""); 
-	}
-	
+<script type="text/javascript">
 	function daily(a){
 		var e = a;
+		console.log(a);
 		let since_date = $("#month").val().trim();
-		let month = since_date.split('/')[1].trim();
-		let year = since_date.split('/')[0].trim();
+		console.log(since_date.trim());
+		
+		var month = since_date.split('/')[1].trim();
+		var year = since_date.split('/')[0].trim();
 		console.log(year);
 		console.log(month);
 		if(e == 1){
-			if(month > 12){
+			if(month >= 12){
 				year++;
 				month = 1;
 				location.href = 'Main.do?date='+year+"/"+month ;
@@ -28,7 +26,7 @@
 		if(e == 0){
 			if(month == 1){
 				year--;
-				month =12;
+				month = 12;
 				location.href = 'Main.do?date='+year+"/"+month ;
 			}
 			month--;
@@ -45,7 +43,7 @@
   <div class="container">
   	<div class="row" style="width:500px;" class="text-center">
   			<div class="text-center" width="50%">
-  				<button id="month"  class="btn-sm" style="color: black;" onclick="daily(0)">PRE</button>
+  				<button class="btn-sm" style="color: black;" onclick="daily(0)">PRE</button>
   				${since_date }
   				<button id="month" class="btn-sm" style="color: black;" onclick="daily(1)" value="${since_date }">NEXT</button>
   			</div>
@@ -68,7 +66,7 @@
   					</td>
   				</c:forEach>
   			</c:if>
-  		<c:forEach  var="i" begin="1" end="31" step="1">
+  		<c:forEach  var="i" begin="1" end="${day_list.getDAYS()[month-1]}" step="1">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
 					<td class="table-hover" style="background-color: blue;">
 					${i }</td>
@@ -80,7 +78,10 @@
 					<td width="15%" class="table-hover" style="color:black;">${i }
 					</td>
 				</c:if>
-				<c:if test="${i % 7 == 1 }">
+				<c:if test = "${i + day_list.getFrist_day()+2 == 7 }">
+					</tr>
+				</c:if>
+				<c:if test="${i % 7 == 0 }">
 					</tr>
 				</c:if>
 			</c:forEach>
