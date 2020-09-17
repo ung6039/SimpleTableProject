@@ -56,4 +56,28 @@ public class daily {
 		return list;
 	}
 	
+	public static void main(String[] args) {
+		
+		daily dal = new daily();
+		List<dailyVO> list =  dal.dal("2020/8");
+		
+		System.out.println(list.get(0).SINCE_YEAR+" / " +list.get(0).SINCE_MONTH);
+		System.out.print("일 월 화 수 목 금 토 \n");
+		for(int j =0; j<=list.get(0).getFrist_day()+1 ; j++) {
+			System.out.print("땡 ");
+		}
+		
+		for(int i = 1; i<list.get(0).getDAYS()[list.get(0).getSINCE_MONTH()-1];  i++) {
+			System.out.print(i+" ");
+			
+			if(i % 7== 0) {
+				System.out.println();
+			}
+			
+		}
+		
+		
+		
+	}
+	
 }

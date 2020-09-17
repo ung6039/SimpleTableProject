@@ -46,17 +46,17 @@ public class TableController{
 			System.out.println("??");
 			list.get(0).setFrist_day(1);
 		}
-		System.out.println("첫 째날 잡기 : "+(list.get(0).getFrist_day()));
+		
 		String id = req.getParameter("id");
 		String img = req.getParameter("img");
-		
-		System.out.println("firstDAY :"+list.get(0).getFrist_day());
 		
 		String year = since_date.split("/")[0].trim();
 		System.out.println("year : "+year);
 		String month = since_date.split("/")[1].trim();
 		System.out.println("month : "+month);
 		m.addAttribute("month",month);
+		
+		// 첫째날 잡는 함수 구하기
 		int ss = Integer.parseInt(month) -1;
 		System.out.println("ss :"+ss);
 		if(ss > 11) {
@@ -66,11 +66,10 @@ public class TableController{
 		m.addAttribute("test_check",test_check);
 		since_date = year+" / "+month;
 		String s="";
+		// 여기까지
 		
 		try {
-			System.out.println("첫 째날 잡기2 : "+(list.get(0).getFrist_day()+1));
 			m.addAttribute("day_list",list.get(0));
-			System.out.println("첫 째날 잡기3 : "+(list.get(0).getFrist_day()+1));
 			m.addAttribute("since_date",since_date);
 			
 			s = session.getAttribute("sid").toString();
@@ -78,18 +77,17 @@ public class TableController{
 			map.put("id", s);
 			MemberVO mvo = mdao.Login_info(map);
 			m.addAttribute("img",mvo.getImg());
-			System.out.println("이미지 :"+mvo.getImg());
+			
 		}catch(Exception ex) {
 			s= "로그인 실패";
 		}
-		System.out.println("id :"+s);
 		
 		m.addAttribute("img");
 		m.addAttribute("id",id);
-		System.out.println(id);
 		
 		return "main";
 	}
+	
 	@RequestMapping("Table.do")
 	public String table(Model m,String page) {
 		

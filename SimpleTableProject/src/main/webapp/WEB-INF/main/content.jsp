@@ -5,9 +5,8 @@
 <script type="text/javascript">
 	function daily(a){
 		var e = a;
-		console.log(a);
 		let since_date = $("#month").val().trim();
-		console.log(since_date.trim());
+		
 		
 		var month = since_date.split('/')[1].trim();
 		var year = since_date.split('/')[0].trim();
@@ -68,14 +67,14 @@
   			</c:if>
   		<c:forEach  var="i" begin="1" end="${day_list.getDAYS()[month-1]}" step="1">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
-					<td class="table-hover" style="background-color: blue;">
+					<td class="table-hover" style="background-color: blue;" >
 					${i }</td>
 				</c:if>
-				<c:if test="${i %7 == 2 }">
-					<td style="color: red">${i }</td>
-				</c:if>
-				<c:if test="${i != day_list.getSINCE_DATE()  && i % 7 != 2}">
-					<td width="15%" class="table-hover" style="color:black;">${i }
+				<c:if test="${i != day_list.getSINCE_DATE() }">
+					<td width="15%" class="table-hover" style="color:black;" >
+						<div >
+						${i }
+						</div>
 					</td>
 				</c:if>
 				<c:if test = "${i + day_list.getFrist_day()+2 == 7 }">
