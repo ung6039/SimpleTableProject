@@ -57,7 +57,15 @@ public class daily {
 	}
 	
 	public static void main(String[] args) {
-		
+		dailyVO vo = new dailyVO();
+		System.out.println("!!");
+		try {
+			System.out.println(vo.frist_day);
+		System.out.println(vo.localdate.now());
+		}catch(Exception ex) {
+			System.out.println(ex.getMessage());
+			ex.printStackTrace();
+		}
 		daily dal = new daily();
 		List<dailyVO> list =  dal.dal("2020/8");
 		

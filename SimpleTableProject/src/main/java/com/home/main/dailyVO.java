@@ -1,11 +1,10 @@
 package com.home.main;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 
 public class dailyVO {
-	
-	LocalDateTime dal;
 	
 	Calendar cal = Calendar.getInstance();
 	int[] DAY	 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
@@ -17,7 +16,8 @@ public class dailyVO {
 	final int SINCE_MONTH = cal.get(Calendar.MONTH)+1;
 	int frist_day = 0;
 	
-	
+	LocalDateTime localtime;
+	LocalDate localdate;
 	
 	public void setFrist_day(int frist_day) {
 		this.frist_day = frist_day;
@@ -57,5 +57,4 @@ public class dailyVO {
 	public int[] getMONTH() {
 		return MONTH;
 	}
-
 }

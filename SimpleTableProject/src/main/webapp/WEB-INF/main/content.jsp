@@ -49,26 +49,14 @@
   		</div>
   </div>
   <table class="table" style="width:60%;height:100%;text-align: center; margin:auto">
-  		<tr >
-  			<th style="color: red" class="text-center" width="10%">일</th>
-  			<th class="text-center" width="10%">월</th>
-  			<th class="text-center" width="10%">화</th>
-  			<th class="text-center" width="10%">수</th>
-  			<th class="text-center" width="10%">목</th>
-  			<th class="text-center" width="10%">금</th>
-  			<th class="text-center" width="10%">토</th>
-  		</tr>
   		<tr>
-  			<c:if test ="${day_list.getFrist_day() >=0 }">
-  				<c:forEach begin="0" end ="${day_list.getFrist_day()+1 }">
-  					<td style="background-color: gray">
-  					</td>
-  				</c:forEach>
-  			</c:if>
   		<c:forEach  var="i" begin="1" end="${day_list.getDAYS()[month-1]}" step="1">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
 					<td class="table-hover" style="background-color: blue;" >
 					${i }</td>
+				</c:if>
+				<c:if test="${i == day_list.getSINCE_DATE()-1 }">
+					</tr>
 				</c:if>
 				<c:if test="${i != day_list.getSINCE_DATE() }">
 					<td width="15%" class="table-hover" style="color:black;" >
@@ -76,12 +64,6 @@
 						${i }
 						</div>
 					</td>
-				</c:if>
-				<c:if test = "${i + day_list.getFrist_day()+2 == 7 }">
-					</tr>
-				</c:if>
-				<c:if test="${i % 7 == 0 }">
-					</tr>
 				</c:if>
 			</c:forEach>
 		</tr>
