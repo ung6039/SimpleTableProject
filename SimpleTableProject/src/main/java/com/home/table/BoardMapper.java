@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Insert;
 
 public interface BoardMapper {
 	
-	
 	@Select("SELECT no,name,subject,content,hit,regdate,num "
 			+ "FROM (SELECT no,name,subject,content,hit,regdate,rownum as num "
 			+ "FROM (SELECT no,name,subject,content,hit,regdate "

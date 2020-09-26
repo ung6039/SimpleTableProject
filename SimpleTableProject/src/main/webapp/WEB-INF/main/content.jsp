@@ -5,13 +5,9 @@
 <script type="text/javascript">
 	function daily(a){
 		var e = a;
-		let since_date = $("#month").val().trim();
-		
-		
+		let since_date = $("#month").val().trim();	
 		var month = since_date.split('/')[1].trim();
 		var year = since_date.split('/')[0].trim();
-		console.log(year);
-		console.log(month);
 		if(e == 1){
 			if(month >= 12){
 				year++;
@@ -33,6 +29,9 @@
 		}
 		
 	}
+	function action(){
+		alert("등록된 할일을 출력");
+	}
 </script>
 
 <div class="container-fluid bg-1 text-center">
@@ -52,7 +51,7 @@
   		<tr>
   		<c:forEach  var="i" begin="1" end="${day_list.getDAYS()[month-1]}" step="1">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
-					<td class="table-hover" style="background-color: blue;" >
+					<td class="table-hover" style="background-color: blue;" onclick="action()" >
 					${i }</td>
 				</c:if>
 				<c:if test="${i == day_list.getSINCE_DATE()-1 }">
