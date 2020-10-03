@@ -27,4 +27,5 @@ public interface MemberMapper {
 	@Select("Select * from member "
 			+ "WHERE memberid=#{id}")
 	public MemberVO Login_info(Map map);
+	
 }

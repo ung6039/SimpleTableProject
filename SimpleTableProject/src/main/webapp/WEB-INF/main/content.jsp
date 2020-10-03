@@ -67,6 +67,13 @@
 			</c:forEach>
 		</tr>
   		<c:if test="${sid != null }">
+  		<div>
+  		<form action="report.do" method="post">
+  			<h3>오늘의 할 일</h3>
+  			<input type="text" style="color:black" name="worklist">
+  			<button type="submit" class="btn btn-danger"style="color:black;">입력</button>
+  		</form>
+  		</div>
   		<table class="table" style="margin: auto; width: 60%">
   		<tr>
   			<td width="30%" style="border-right: solid;">

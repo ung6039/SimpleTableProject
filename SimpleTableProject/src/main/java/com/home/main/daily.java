@@ -1,6 +1,8 @@
 package com.home.main;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Calendar;
 
@@ -16,13 +18,9 @@ public class daily {
 		// 총 날
 		int days = ((year-1)*365) + ((year-1)/4) - ((year-1)/100) + ((year-1)/400);
 		
-		System.out.println("총 날 :"+days);
-		
 		List<dailyVO> list = new ArrayList<>();
 		dailyVO vo = new dailyVO();
 		int[] Mdays = vo.getDAYS();
-		
-		
 		
 		switch(month) {
 			case 2:
@@ -34,8 +32,6 @@ public class daily {
 			default:
 				break;
 		}
-		System.out.println(" 2월 : "+Mdays[1]);
-		System.out.println(month);
 		for(int i = 0; i<month-1; i++) {
 			days += Mdays[i];
 		}
@@ -56,36 +52,14 @@ public class daily {
 		return list;
 	}
 	
+
 	public static void main(String[] args) {
 		dailyVO vo = new dailyVO();
-		System.out.println("!!");
-		try {
-			System.out.println(vo.frist_day);
-		System.out.println(vo.localdate.now());
-		}catch(Exception ex) {
-			System.out.println(ex.getMessage());
-			ex.printStackTrace();
-		}
-		daily dal = new daily();
-		List<dailyVO> list =  dal.dal("2020/8");
-		
-		System.out.println(list.get(0).SINCE_YEAR+" / " +list.get(0).SINCE_MONTH);
-		System.out.print("일 월 화 수 목 금 토 \n");
-		for(int j =0; j<=list.get(0).getFrist_day()+1 ; j++) {
-			System.out.print("땡 ");
-		}
-		
-		for(int i = 1; i<list.get(0).getDAYS()[list.get(0).getSINCE_MONTH()-1];  i++) {
-			System.out.print(i+" ");
-			
-			if(i % 7== 0) {
-				System.out.println();
-			}
-			
-		}
-		
-		
-		
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-mm-dd");
+		System.out.println(LocalDateTime.now());
+		String s=LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd"));
+		System.out.println(s);
+		System.out.println();
 	}
 	
 }
