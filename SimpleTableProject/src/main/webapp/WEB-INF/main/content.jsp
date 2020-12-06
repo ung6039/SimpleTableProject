@@ -29,8 +29,10 @@
 		}
 		
 	}
-	function action(){
-		alert("등록된 할일을 출력");
+	function action(date){
+		var date_work = $("#today").val();
+		var test = td.text();
+		alert("등록된 할일을 출력 : " +date_work + test);
 	}
 </script>
 
@@ -51,8 +53,9 @@
   		<tr>
   		<c:forEach  var="i" begin="1" end="${day_list.getDAYS()[month-1]}" step="1">
 				<c:if test="${ i == day_list.getSINCE_DATE()}">
-					<td class="table-hover" style="background-color: blue;" onclick="action()" >
-					${i }</td>
+					<td class="table-hover" id="today" style="background-color: blue;" onclick="action()" value="4">
+					${i }
+					</td>
 				</c:if>
 				<c:if test="${i == day_list.getSINCE_DATE()-1 }">
 					</tr>

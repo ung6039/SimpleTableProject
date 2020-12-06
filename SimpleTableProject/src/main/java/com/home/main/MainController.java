@@ -25,6 +25,11 @@ public class MainController {
 	@Autowired
 	ReportDAO reportdao;
 	
+	@RequestMapping("/table/")
+	public String index() {
+		System.out.println("이거 불러와 지나요??");
+		return "index.html";
+	}
 	@RequestMapping("daliy.do")
 	public String Calendar() {
 		return "redirect:Main.do";
